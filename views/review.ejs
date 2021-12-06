@@ -1,0 +1,78 @@
+<%userReviews.forEach((review,ind)=>{ %>
+
+
+    <div class="review">
+        
+    <div id="reviewer row">
+        <div class="row">
+        <div class="col-xl-1 col-lg-2 col-md-2 col-sm-2 col-xs-2 ">
+        <div class="pfp centered"><p class="montserrat"><%-review.reviewerName[0]%></p></div>
+       
+    </div>
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1 align-l ">
+    <p class="md-text "><%-review.reviewerName%></p>
+    </div>
+        </div>
+        
+    <div class="row">
+        <div class="col-xl-3 col-lg-4 col-md-5 col-sm-6 col-xs-6  ">
+        <div class="beyondBlue star-row align-l">
+            <% for(i=0;i<review.score;i++){  %>
+             <i class="fas fa-star star-sm"></i> 
+            <% } %>
+            <p class="md-text fw-700 float-r-review review-headline"><%-review.reviewTitle%></p>
+           </div>
+        </div>
+        <!-- <div class="centered ">
+            <p class="md-text fw-700 ">Review Headline</p>
+           
+        </div> -->
+        <div class="row text-sm fw-600">
+            <p><%-review.reviewText%></p>
+        </div>
+    </div>
+    
+    </div>
+    <hr class="darkBlue"/>
+    </div>
+    <%})%>
+
+
+<%reviews.forEach((review,ind)=>{ %>
+
+
+<div class="review">
+    
+<div id="reviewer row">
+    <div class="row">
+    <div class="col-xl-1 col-lg-2 col-md-2 col-sm-2 col-xs-2 ">
+    <div class="pfp centered"><p class="montserrat"><%-review.reviewerName[0]%></p></div>
+   
+</div>
+<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1 align-l ">
+<p class="md-text "><%-review.reviewerName%></p>
+</div>
+    </div>
+    
+<div class="row">
+    <div class="col-xl-3 col-lg-4 col-md-5 col-sm-6 col-xs-6  ">
+    <div class="beyondBlue star-row align-l">
+        <% for(i=0;i<review.score;i++){  %>
+         <i class="fas fa-star star-sm"></i> 
+        <% } %>
+        <p class="md-text fw-700 float-r-review review-headline"><%-review.reviewTitle%></p>
+       </div>
+    </div>
+    <!-- <div class="centered ">
+        <p class="md-text fw-700 ">Review Headline</p>
+       
+    </div> -->
+    <div class="row text-sm fw-600">
+        <p><%-review.reviewText%></p>
+    </div>
+</div>
+
+</div>
+<hr class="darkBlue"/>
+</div>
+<%})%>

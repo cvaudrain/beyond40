@@ -1,0 +1,16 @@
+{
+  "name": "beyond40",
+  "version": "1.0.0",
+  "description": "Sample review section prototype",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "chris vaudrain",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  }
+}

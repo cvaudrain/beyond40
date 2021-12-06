@@ -1,0 +1,35 @@
+<div class="">
+    <form id="composeReview" name="composeReview" action="/" method="post">
+        <div class="centered">
+        <p class="text-md">Your Review</p>
+    </div>
+    <div class="row">
+        <div class="col-6">
+        <input id="reviewerName" class="w-100 reviewInput" name="reviewerName" type="text" placeholder="Your Name" required="true" >
+    </div>
+    <div class="col-6">
+        <input id="reviewerEmail" class="w-100 reviewInput" name="reviewerEmail" type="text" placeholder="Your Name" required="true" >
+    </div>
+    <div class="col-12  padding ">
+        <p class="text-mdsm black">   Score </p>
+        <div id="star-container " class="light">
+        <i class="fas fa-2x fa-star review-star" id="1"></i>
+     <i class="fas fa-2x fa-star review-star" id="2"></i>
+     <i class="fas fa-2x fa-star review-star" id="3"></i>
+     <i class="fas fa-2x fa-star review-star" id="4"></i>
+     <i class="fas fa-2x fa-star review-star" id="5"></i>
+    </div>
+        <!-- <input id=starScore"" name="starScore" type="text" placeholder="Your Name" required="true"></input> -->
+        </div>
+
+        <div class="col-12">
+        <input id="reviewTitle" class="w-100 reviewInput" name="reviewTitle" type="text" placeholder="Headline" required="true">
+        </div>
+        <div class="col-12">
+         <input id="reviewText" class="w-100 reviewInput" name="reviewText" type="textArea" placeholder="Your review" required="true">
+         </div>
+    </div>
+    <button id="submit" name="submit" class="button-round box-shade-sm azure white"><i class="fas fa-paper-plane"></i></button>
+    </form>
+    
+</div>
