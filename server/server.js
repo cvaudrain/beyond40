@@ -22,10 +22,11 @@ app.listen(PORT,()=>{
 })
 
 // Start Values
-let reviewScore = 4.9
-let sum = 44
-let userReviews = []
-let reviewNum = 9
+let reviewScore = 4.9;
+let sum = 44;
+
+let userReviews = [];
+let reviewNum = 9;
 let calcAverage = (arr)=>{
     //accumulator to divide total sum by arr.length. 
    let rating = reviewNum/num 
@@ -34,7 +35,8 @@ let calcAverage = (arr)=>{
 }
 // reviewScore = calcAverage(userReviews)
 let reviewScoreRoundUp = Math.floor(reviewScore+1)
-
+let questions = []
+let questionNum = 0
 let starIcon = `<i class="fas fa-star"></i>`
 let starIconLg = `<i class="fas fa-2x fa-star"></i>`
 
@@ -48,7 +50,9 @@ app.get("/",(req,res)=>{
         reviewScoreRoundUp : reviewScoreRoundUp,
         starIconLg: starIconLg,
         reviews:reviews,
-       userReviews:userReviews
+       userReviews:userReviews,
+       questions:questions,
+       questionNum:questionNum
     },
     )
 })
@@ -61,5 +65,14 @@ sum+= +newReview.score
 
 reviewScore = sum/reviewNum
 res.json(userReviews)
+})
+app.post("/api/ask",(req,res)=>{
+
+let newQuestion = req.body.question
+console.log(newQuestion)
+questions.push(newQuestion);
+questionNum+=1;
+console.log(questions.length)
+res.json(questions)
 })
 

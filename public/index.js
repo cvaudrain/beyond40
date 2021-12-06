@@ -4,11 +4,6 @@
 $(document).ready()
 {console.log("Connected to index.js")}
 
-console.log(sessionStorage.getItem("dog"))
-$("#composeButton").click(()=>{
-    console.log("Click Logged compose review")
-})
-
 const review = { //the review object to be posted
     reviewerName:"",
     reviewerEmail:"",
@@ -53,6 +48,9 @@ $(".review-star").click((ev)=>{
                 'Content-Type': 'application/json',
                 'key': '12345'
               }
+              if(review.reviewerName.length==0 || review.reviewText.length==0 || review.score == ""){
+                alert("Please complete review form")
+                return}
            axios.post("/api/review",payload,config)
            .then((res)=>{
                console.log(`data is ${res.data[0]}`)
@@ -64,23 +62,78 @@ $(".review-star").click((ev)=>{
           .catch((err)=>console.log(err))
         })
 
+        // Ask Question
+        const question = { //the review object to be posted
+            askName:"",
+            askEmail:"",
+            question:""
+            }
+        
+        $(".questionInput").change((e)=>{//tracks form input values
+            console.log(e.target.value)
+            console.log(e.target.id)
+            let keyName = e.target.id
+            question[keyName] = e.target.value
+            console.log(question)
+        })
 
+        $("#submit-q").click((e)=>{
+            e.preventDefault()
+            console.log("SUBMISSION")
+            
+            let payload = {
+                question: question
+            }
+            const config = {
+                'Content-Type': 'application/json',
+                'key': '12345'
+              }
+              console.log(payload)
+              if(payload.question.askName.length==0 || payload.question.questionText.length==0){
+                alert("Please complete form")
+                return}
+           axios.post("/api/ask",payload,config)
+           .then((res)=>{
+               console.log(`data is ${res.data[0]}`)
+            // let newRev = res.data
+           
+            location.reload()
+           })
+          .catch((err)=>console.log(err))
+        
+        })
 
+        // Compose Review/Question Section Visibility
+        $("#composeButton").click((ev)=>{
+            $("#ask-div").slideUp()
+            $("#compose-div").slideDown()
+        })
+        $("#cancelReview").click((ev)=>{
+            $("#compose-div").slideUp()
+        })
 
-    
-    // const reviewObj = {
-    //     name: $("#reviewerName"),
-    //     email: $("#reviewerEmail"),
-    //     reviewTitle:$("#reviewTitle"),
-    //     reviewText:$("#reviewText"),
-    //     starScore:$("#starScore")
-    // }
+        $("#askButton").click((ev)=>{
+            console.log("click")
+            $("#compose-div").slideUp()
+            $("#ask-div").slideDown()
+        })
+        $("#cancelQuestion").click((ev)=>{
+            $("#ask-div").slideUp()
+        })
 
-//     console.log(`1 star score = ${stars[0].id}`)
-//     console.log(`2 star score = ${stars[1].id}`)
-//     console.log(`3 star score = ${stars[2].id}`)
-//     console.log(`4 star score = ${stars[3].id}`)
-//     console.log(stars)
-// console.log(ev.target.id)
-// console.log($("#star-container").contents)
+        // View complete reviews, questions
+        $("#toggleCompose").click((ev)=>{
+            $("#show-questions").fadeOut()
+            $(".no-question").fadeOut()
+            $("#show-reviews").fadeIn()
+        
+            console.log("button toggle compose click")
+        })
+        $("#toggleQuestion").click((ev)=>{
+            
+            $("#show-reviews").fadeOut()
+            $("#show-questions").fadeIn()
+            $(".no-question").fadeIn()
+            console.log("button toggle question click")
+        })
 

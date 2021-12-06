@@ -1,0 +1,34 @@
+
+<!-- <div id="show-questions inviso">
+<% if(questions.length==0){ %>
+    <div class="centered text-md inviso no-question"><p>No questions yet...ask away!</p></div>
+            <% } %>   -->
+            <div id="show-questions" class="question inviso">
+<%questions.forEach((question,ind)=>{ %>
+
+    <div id="" class="question">
+       
+    <div id="questioner row">
+        <div class="row">
+        <div class="col-xl-1 col-lg-2 col-md-2 col-sm-2 col-xs-2 ">
+        <div class="pfp centered"><p class="montserrat"><%-question.askName[0]%></p></div>
+       
+    </div>
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1 align-l ">
+    <p class="md-text "><%-question.askName%></p>
+    </div>
+        </div>
+        
+    <div class="centered">
+       
+        <div class="row text- fw-700 ">
+            <p><%-question.questionText%></p>
+        </div>
+    </div>
+    
+    </div>
+    <hr class="darkBlue"/>
+   </div>
+    <%})%>
+</div>
+<!-- </div> -->

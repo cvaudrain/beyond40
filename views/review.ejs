@@ -1,7 +1,8 @@
+<div id="show-reviews">
 <%userReviews.forEach((review,ind)=>{ %>
 
 
-    <div class="review">
+    <div id="" class="review">
         
     <div id="reviewer row">
         <div class="row">
@@ -20,13 +21,16 @@
             <% for(i=0;i<review.score;i++){  %>
              <i class="fas fa-star star-sm"></i> 
             <% } %>
-            <p class="md-text fw-700 float-r-review review-headline"><%-review.reviewTitle%></p>
+            <!-- <p class="md-text fw-700 float-r-review review-headline"><%-review.reviewTitle%></p> -->
            </div>
+          
         </div>
-        <!-- <div class="centered ">
-            <p class="md-text fw-700 ">Review Headline</p>
+        <div class="centered ">
+            <p class="text-md fw-700 "><%-review.reviewTitle%></p>
            
-        </div> -->
+        </div>
+    </div>
+    
         <div class="row text-sm fw-600">
             <p><%-review.reviewText%></p>
         </div>
@@ -34,7 +38,7 @@
     
     </div>
     <hr class="darkBlue"/>
-    </div>
+    <!-- </div> -->
     <%})%>
 
 
@@ -60,13 +64,13 @@
         <% for(i=0;i<review.score;i++){  %>
          <i class="fas fa-star star-sm"></i> 
         <% } %>
-        <p class="md-text fw-700 float-r-review review-headline"><%-review.reviewTitle%></p>
+        <!-- <p class="md-text fw-700 float-r-review review-headline"><%-review.reviewTitle%></p> -->
        </div>
     </div>
-    <!-- <div class="centered ">
-        <p class="md-text fw-700 ">Review Headline</p>
+    <div class="centered ">
+        <p class="text-md fw-700 "><%-review.reviewTitle%></p>
        
-    </div> -->
+    </div>
     <div class="row text-sm fw-600">
         <p><%-review.reviewText%></p>
     </div>
@@ -76,3 +80,4 @@
 <hr class="darkBlue"/>
 </div>
 <%})%>
+</div>

@@ -12,6 +12,10 @@ input{
 .inviso{
     display:none;
 }
+.compose-star:hover{
+    color:rgb(241, 182, 72);
+  
+}
 .button:hover{
     /* font-size:1.2rem; */
     
@@ -78,6 +82,9 @@ input{
 }
 .padding{
     padding:20px;
+}
+.padding-sm{
+    padding:9px;
 }
 .pad-top-xl{
     padding-top:50px
@@ -231,8 +238,24 @@ padding-bottom:6px
    background: linear-gradient(150deg, rgba(255,255,255,1) 6%, rgb(231, 231, 231) 33%, rgb(250, 249, 249) 57%, rgba(205,205,205,1) 87%);
    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#006d9e",endColorstr="#0c6994",GradientType=1);
 }
+.button-round-sm{
+    width:40px;
 
-
+    height:40px;
+    /* height:auto; */
+    /* min-height:20px;
+    max-height:50px; */
+    border:1px solid rgb(42, 42, 42);
+    padding:1px;
+   border-radius:50%;
+   margin:10px;
+   color:white;
+}
+.button-round-sm:hover{
+    color:rgba(154,27,81,1);
+    background: rgb(255,255,255);
+    background: linear-gradient(150deg, rgba(255,255,255,1) 6%, rgba(226,226,226,1) 33%, rgba(218,218,218,1) 57%, rgba(205,205,205,1) 87%);
+}
 .button-round{
     width:60px;
 
@@ -359,6 +382,7 @@ background-color: black;
 .br-white{
     background-color: #fff;
 }
+
 .br-gray{
     background-color: grey;
 }
@@ -369,7 +393,11 @@ background-color: black;
     background: linear-gradient(144deg, rgba(0,109,158,0.18) 0%, rgba(66,155,196,0.18) 37%, rgba(12,105,148,0.18) 70%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#006d9e",endColorstr="#0c6994",GradientType=1);
 }
-
+.magenta-gradient{
+    color:white;
+  background: rgb(223, 75, 127);
+  background: linear-gradient(166deg, rgba(223,75,128,1) 10%, rgba(193,48,102,1) 41%, rgba(154,27,81,1) 77%);
+  }
 /* Details / Shading */
 .box-shade{
     box-shadow: 1px 3px 7px black;
