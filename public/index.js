@@ -3,7 +3,7 @@
 
 $(document).ready()
 {console.log("Connected to index.js")}
-
+$("#body").fadeIn("slow");
 const review = { //the review object to be posted
     reviewerName:"",
     reviewerEmail:"",

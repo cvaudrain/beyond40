@@ -4,6 +4,9 @@
     <div class="centered text-md inviso no-question"><p>No questions yet...ask away!</p></div>
             <% } %>   -->
             <div id="show-questions" class="question inviso">
+                <% if(questions.length==0){ %>
+                    <div class="centered text-md inviso darkBlue fw-700 text-shadow no-question"><p>No questions yet...Be the first!</p></div>
+                            <% } %>  
 <%questions.forEach((question,ind)=>{ %>
 
     <div id="" class="question">
